@@ -36,7 +36,7 @@ def get_global_policy():
 def check_mxnet_version():
     """Check whether MXNet version satisfies minimum requirement."""
     supported = (0, 9, 2)
-    current = tuple(int(v) for v in mx.__version__.split("."))
+    current = tuple(int(v[0]) for v in mx.__version__.split("."))
     succ = True
     for v1, v2 in zip(current, supported):
         if v1 > v2:
